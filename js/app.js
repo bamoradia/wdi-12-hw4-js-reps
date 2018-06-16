@@ -56,6 +56,7 @@ if(animal === "cow") {
 	console.log("Hey! You're not a cow.");
 }
 
+
 //Driver's Ed
 const age = 12;
 
@@ -419,12 +420,12 @@ const simulateBattle = (hero, monster) => {
 
 	//comparing both time to deaths to see who won the battle
 	if ( timeToDeathMonster > timeToDeathHero ) {
-		console.log('The Hero has died.');
+		console.log(`${hero.name} has died.`);
 		console.log(`The Monster has ${monsterHealthRemaining} HP left.`);
 		return false
 	} else {
-		console.log('Congratulations, you have defeated the Monster.');
-		console.log(`The Hero has ${heroHealthRemaining} HP left.`);
+		console.log(`Congratulations, ${hero.name} has defeated the Monster.`);
+		console.log(`${hero.name} has ${heroHealthRemaining} HP left.`);
 		return true
 	}
 }
@@ -433,6 +434,40 @@ simulateBattle(adventurer, ogre);
 
 
 
+
+//Extra Stuff
+
+const cat1 = {
+	name: 'Garfield',
+	breed: 'Exotic Shorthair',
+	age: 7
+}
+
+
+console.log(cat1.age);
+console.log(cat1.breed);
+
+
+const cat2 = {
+	name: 'Tigger',
+	breed: 'Tiger',
+	age: 10
+}
+
+
+const combineCats = (mama, papa) => {
+	const newCat = {};
+	newCat.name = (papa.name + mama.name);
+	newCat.age = 1;
+	newCat.breed = (papa.breed + '-' + mama.breed);
+	return newCat
+}	
+
+
+console.log(combineCats(cat1, cat2));
+
+
+console.log(combineCats(combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)), combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2))));
 
 
 
